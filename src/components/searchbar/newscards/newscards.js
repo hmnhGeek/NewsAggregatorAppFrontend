@@ -14,7 +14,7 @@ const NewsCard = props => {
     const [newsImage, setNewsImage] = useState(null);
     
     const handleOpen = () => {
-        axios.get(`http://127.0.0.1:8080/fullnews?link=${props.newslink}`).then(response => {
+        axios.get(`https://geekynews.herokuapp.com/fullnews?link=${props.newslink}`).then(response => {
             setTitle(response.data.title);
             setNews(response.data.news);
             setNewsImage(response.data.image);

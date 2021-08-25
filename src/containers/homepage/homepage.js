@@ -9,7 +9,7 @@ const Homepage = props => {
     const [searchResults, setSearchResults] = useState(null);
 
     const searchNews = (keyword) => {
-        axios.get(`http://127.0.0.1:8080/getheadlinesfor?keyword=${keyword}&page=1`).then(response => {
+        axios.get(`https://geekynews.herokuapp.com/getheadlinesfor?keyword=${keyword}&page=1`).then(response => {
             setSearchResults(response.data);
         }).catch(err => console.log(err));
     }
