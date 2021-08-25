@@ -7,6 +7,12 @@ import Container from '@material-ui/core/Container';
 const SearchBar = props => {
     const [searchValue, setSearchValue] = useState(null);
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          props.searchMethod(searchValue);
+        }
+    }
+
     return (
         <div className="search-bar">
             <Container>
@@ -16,6 +22,7 @@ const SearchBar = props => {
                             id="outlined-basic" 
                             label="Search news" 
                             variant="outlined"
+                            onKeyPress={handleKeyDown}
                             value={searchValue} 
                             fullWidth
                             onChange={(e) => setSearchValue(e.target.value)}
